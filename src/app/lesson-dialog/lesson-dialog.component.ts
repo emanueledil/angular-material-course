@@ -10,23 +10,28 @@ import {Course} from '../model/course';
 })
 export class LessonDialogComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) private course: Course, private dialogRef: MatDialogRef<LessonDialogComponent>) {
+  constructor(@Inject(MAT_DIALOG_DATA) private lesson: Lesson, private dialogRef: MatDialogRef<LessonDialogComponent>) {
   }
 
+  visualizzaLezione: Lesson = this.lesson
+
   ngOnInit(): void {
+
   }
 
   close() {
     this.dialogRef.close()
   }
 
-  openDialog(dialog: MatDialog, lesson: Lesson) {
-    const config = new MatDialogConfig();
-    config.disableClose = true;
-    config.autoFocus = true;
 
-    config.data = {...lesson};
-    const dialogRef = dialog.open(LessonDialogComponent, config);
-    return dialogRef.afterClosed();
-  }
+}
+
+export function openLessonDialog(dialog: MatDialog, lesson: Lesson) {
+  const config = new MatDialogConfig();
+  config.disableClose = true;
+  config.autoFocus = true;
+
+  config.data = {...lesson};
+  const dialogRef = dialog.open(LessonDialogComponent, config);
+  return dialogRef.afterClosed();
 }

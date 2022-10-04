@@ -7,6 +7,9 @@ import {catchError, tap} from 'rxjs/operators';
 import {merge, throwError} from 'rxjs';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
+import {Dialog} from '@angular/cdk/dialog';
+import {MatDialog} from '@angular/material/dialog';
+import {openLessonDialog} from '../lesson-dialog/lesson-dialog.component';
 
 @Component({
   selector: 'app-prova',
@@ -31,7 +34,7 @@ export class ProvaComponent implements OnInit, AfterViewInit {
 
   displayedColumns = ['id', 'duration', 'seqNo'];
 
-  constructor(private route: ActivatedRoute, private coursesService: CoursesService) {
+  constructor(private route: ActivatedRoute, private coursesService: CoursesService, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -67,7 +70,7 @@ export class ProvaComponent implements OnInit, AfterViewInit {
 
   }
 
-  openDialog() {
-    alert("prova")
+  openDialog(myLesson: Lesson) {
+    openLessonDialog(this.dialog, myLesson)
   }
 }

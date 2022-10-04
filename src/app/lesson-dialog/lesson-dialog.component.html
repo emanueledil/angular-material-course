@@ -1,9 +1,16 @@
 <div>
   <mat-dialog-content>
 
+    Description: {{visualizzaLezione.description}}
+    <br>
+    <br>
+    Course ID: {{visualizzaLezione.courseId}}
+
+
   </mat-dialog-content>
 
-  <mat-dialog-actions mat-raised-button (click)="close()" >
-    Close
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="close()" > Close </button>
+
   </mat-dialog-actions>
 </div>
