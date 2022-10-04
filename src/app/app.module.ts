@@ -49,6 +49,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {ProvaComponent} from './prova/prova.component';
 import { ProvaCorsiComponent } from './prova-corsi/prova-corsi.component';
 import { LessonDialogComponent } from './lesson-dialog/lesson-dialog.component';
+import { ProvaTableComponent } from './prova/prova-table/prova-table.component';
+import { ProvaPaginatorComponent } from './prova/prova-paginator/prova-paginator.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,9 @@ import { LessonDialogComponent } from './lesson-dialog/lesson-dialog.component';
     VirtualScrollingComponent,
     ProvaComponent,
     ProvaCorsiComponent,
-    LessonDialogComponent
+    LessonDialogComponent,
+    ProvaTableComponent,
+    ProvaPaginatorComponent
   ],
   imports: [
     BrowserModule,

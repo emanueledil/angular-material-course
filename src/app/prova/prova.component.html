@@ -1,6 +1,6 @@
 <div class="course">
   <table [dataSource]="lessons" mat-table class="lessons-table" matSort matSortDisableClear matSortActive="id" matSortDirection="asc">
-
+  <caption>lesson list</caption>
     <ng-container matColumnDef="id">
       <th *matHeaderCellDef mat-header-cell mat-sort-header="">ID</th>
 
@@ -19,17 +19,6 @@
 
       <td *matCellDef="let lesson" mat-cell>{{lesson.seqNo}}</td>
     </ng-container>
-
-    <!--  <ng-container matColumnDef="courseId">-->
-    <!--    <th *matHeaderCellDef mat-header-cell mat-sort-header="">-->
-    <!--      course Id-->
-    <!--    </th>-->
-    <!--    <td *matCellDef="let lesson" class="duration-cell" mat-cell>{{lesson.courseId}}</td>-->
-    <!--  </ng-container>-->
-
-
-
-
 
 
     <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>

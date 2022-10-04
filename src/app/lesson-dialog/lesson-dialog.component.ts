@@ -1,26 +1,22 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
 import {Lesson} from '../model/lesson';
-import {Course} from '../model/course';
 
 @Component({
   selector: 'lesson-dialog',
   templateUrl: './lesson-dialog.component.html',
   styleUrls: ['./lesson-dialog.component.scss']
 })
-export class LessonDialogComponent implements OnInit {
+export class LessonDialogComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) private lesson: Lesson, private dialogRef: MatDialogRef<LessonDialogComponent>) {
   }
 
-  visualizzaLezione: Lesson = this.lesson
+  public lessonDetail: Lesson = this.lesson;
 
-  ngOnInit(): void {
-
-  }
 
   close() {
-    this.dialogRef.close()
+    this.dialogRef.close();
   }
 
 
