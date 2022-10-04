@@ -1,0 +1,63 @@
+<p>prova-corsi works!</p>
+<p>prova works!</p>
+<div class="course">
+  <table [dataSource]="courses" mat-table class="lessons-table" matSort matSortDisableClear matSortActive="id" matSortDirection="asc">
+
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header="">ID</th>
+
+      <td *matCellDef="let course" mat-cell>{{course.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header="">
+        Description
+      </th>
+      <td *matCellDef="let course" mat-cell>{{course.description}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="iconUrl">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header="">
+        Description
+      </th>
+      <td *matCellDef="let course" mat-cell>{{course.iconUrl}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="courseListIcon">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header="">
+        courseListIcon
+      </th>
+      <td *matCellDef="let course" class="duration-cell" mat-cell>{{course.courseListIcon}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="longDescription">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header="">
+        longDescription
+      </th>
+      <td *matCellDef="let course" class="duration-cell" mat-cell>{{course.longDescription}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="category">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header="">
+        category
+      </th>
+      <td *matCellDef="let course" class="duration-cell" mat-cell>{{course.category}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="lessonCount">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header="">
+        lessonCount
+      </th>
+      <td *matCellDef="let course" class="duration-cell" mat-cell>{{course.lessonCount}}</td>
+    </ng-container>
+
+
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let course; columns: displayedColumns" mat-row></tr>
+
+  </table>
+
+</div>

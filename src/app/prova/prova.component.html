@@ -1,0 +1,44 @@
+<p>prova works!</p>
+<div class="course">
+  <table [dataSource]="lessons" mat-table class="lessons-table" matSort matSortDisableClear matSortActive="id" matSortDirection="asc">
+
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header="">ID</th>
+
+      <td *matCellDef="let lesson" mat-cell>{{lesson.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="duration">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header="">
+        duration
+      </th>
+      <td *matCellDef="let lesson" class="duration-cell" mat-cell>{{lesson.duration}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="seqNo">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header="">seq No</th>
+
+      <td *matCellDef="let lesson" mat-cell>{{lesson.seqNo}}</td>
+    </ng-container>
+
+    <!--  <ng-container matColumnDef="courseId">-->
+    <!--    <th *matHeaderCellDef mat-header-cell mat-sort-header="">-->
+    <!--      course Id-->
+    <!--    </th>-->
+    <!--    <td *matCellDef="let lesson" class="duration-cell" mat-cell>{{lesson.courseId}}</td>-->
+    <!--  </ng-container>-->
+
+
+
+
+
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+
+    <tr *matRowDef="let lesson; columns: displayedColumns" mat-row (click)="openDialog()" ></tr>
+
+  </table>
+
+  <mat-paginator class="mat-elevation-z0 " [length]="course?.lessonsCount"  [pageSize]="3" [pageSizeOptions]="[3, 5, 10]"></mat-paginator>
+
+</div>

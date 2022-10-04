@@ -52,5 +52,4 @@ export class CoursesService {
             map(res =>  res["payload"])
         );
     }
-
 }
